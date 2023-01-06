@@ -50,7 +50,7 @@ services:
     environment:
       MARIADB_DATABASE: ${DB_NAME}
       MARIADB_USER: ${DB_USER}
-      MARIADB_PASSWORD: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'yes'
 networks:
   eth1:

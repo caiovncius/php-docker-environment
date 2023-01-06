@@ -18,3 +18,14 @@ down:
 
 build:
 	docker compose build --no-cache
+
+install-wp:
+	if [ -f "wp.zip" ]; then rm  wp.zip; fi
+	if [ -d "wordpress" ]; then rm -rf  wordpress; fi
+	curl https://wordpress.org/latest.zip -o wp.zip
+	unzip -q wp.zip
+	cp -r wordpress/* www/
+	rm -rf wordpress/
+	rm wp.zip
+	rm -rf .git/
+	make up
